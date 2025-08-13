@@ -7,3 +7,5 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
+// $routes->addRedirect('/', 'home');
+$routes->get('kerja', 'Kerja::index');

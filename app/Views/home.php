@@ -1,5 +1,8 @@
 <?= $this->extend('layouts/default'); ?>
 
+<?= $this->section('title'); ?>
+<title>Home | Nikahan</title>
+<?= $this->endSection(); ?>
 
 <?= $this->section('content'); ?>
 <section class="section">

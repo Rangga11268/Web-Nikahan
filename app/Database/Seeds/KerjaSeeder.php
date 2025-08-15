@@ -13,8 +13,8 @@ class KerjaSeeder extends Seeder
         for ($i = 0; $i < 5; $i++) {
             $data[] = [
                 'nama_kerja' => $faker->jobTitle(),
-                'date_kerja' => $faker->dateTimeBetween('-2 years', 'now'),
-                'info_gawe' => $faker->paragraphs(2, true),
+                'date_kerja' => $faker->dateTimeBetween('-2 years', 'now')->format('Y-m-d H:i:s'),
+                'info_kerja' => $faker->paragraphs(2, true),
             ];
         }
         // simpan db

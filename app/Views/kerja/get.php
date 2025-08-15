@@ -20,59 +20,30 @@
                     <table class="table table-striped table-md">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Created At</th>
-                                <th>Status</th>
+                                <th>NO</th>
+                                <th>Nama Kerjaan</th>
+                                <th>Waktu Kerjaan</th>
+                                <th>Info Kerjaan</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Irwansyah Saputra</td>
-                                <td>2017-01-09</td>
-                                <td>
-                                    <div class="badge badge-success">Active</div>
-                                </td>
-                                <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Hasan Basri</td>
-                                <td>2017-01-09</td>
-                                <td>
-                                    <div class="badge badge-success">Active</div>
-                                </td>
-                                <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Kusnadi</td>
-                                <td>2017-01-11</td>
-                                <td>
-                                    <div class="badge badge-danger">Not Active</div>
-                                </td>
-                                <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>Rizal Fakhri</td>
-                                <td>2017-01-11</td>
-                                <td>
-                                    <div class="badge badge-success">Active</div>
-                                </td>
-                                <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>Isnap Kiswandi</td>
-                                <td>2017-01-17</td>
-                                <td>
-                                    <div class="badge badge-success">Active</div>
-                                </td>
-                                <td><a href="#" class="btn btn-secondary">Detail</a></td>
-                            </tr>
+                            <?php foreach ($query as $key => $row) : ?>
+                                <tr>
+                                    <td><?= $key + 1; ?></td>
+                                    <td><?= $row->nama_kerja; ?></td>
+                                    <td><?= $row->date_kerja; ?></td>
+                                    <td><?= $row->info_kerja; ?></td>
+                                    <td class="text-center" style="width: 15%;">
+                                        <a href="" class="btn btn-warning btn-sm">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a href="" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>
                         </tbody>
                     </table>
                 </div>

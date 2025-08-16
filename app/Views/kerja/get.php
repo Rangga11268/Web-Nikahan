@@ -8,7 +8,20 @@
 <section class="section">
     <div class="section-header">
         <h1>Kerja</h1>
+        <div class="section-header-button">
+            <a href="<?= site_url('kerja/add'); ?>" class="btn btn-primary">Add kerja</a>
+        </div>
     </div>
+
+    <?php if (session()->getFlashdata('success')) : ?>
+        <div class="alert alert-success alert-dismissible show fade">
+            <div class="alert-body">
+                <button class="close" data-dismiss="alert">X</button>
+                <b>Succes ! </b>
+                <?= session()->getFlashdata('success'); ?>
+            </div>
+        </div>
+    <?php endif; ?>
 
     <div class="section-body">
         <div class="card">
@@ -32,7 +45,7 @@
                                 <tr>
                                     <td><?= $key + 1; ?></td>
                                     <td><?= $row->nama_kerja; ?></td>
-                                    <td><?= $row->date_kerja; ?></td>
+                                    <td><?= date('d/m/y', strtotime($row->date_kerja)); ?></td>
                                     <td><?= $row->info_kerja; ?></td>
                                     <td class="text-center" style="width: 15%;">
                                         <a href="" class="btn btn-warning btn-sm">
